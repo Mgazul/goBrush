@@ -34,13 +34,10 @@ import com.arcaniax.gobrush.listener.PlayerQuitListener;
 import com.arcaniax.gobrush.util.BlockUtils;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import io.papermc.lib.PaperLib;
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.incendo.serverlib.ServerLib;
 
-import static com.arcaniax.gobrush.util.BrushZipManager.setupBrushes;
 
 public class GoBrushPlugin extends JavaPlugin {
 
@@ -71,7 +68,6 @@ public class GoBrushPlugin extends JavaPlugin {
         saveDefaultConfig();
         Session.initializeConfig(this.getConfig());
         Session.initializeBrushPlayers();
-        setupBrushes();
         Session.setWorldEdit((WorldEditPlugin) Bukkit.getServer().getPluginManager().getPlugin("WorldEdit"));
         registerListeners();
         registerCommands();
@@ -80,32 +76,6 @@ public class GoBrushPlugin extends JavaPlugin {
         ServerLib.isJavaSixteen();
         PaperLib.suggestPaper(this);
         amountOfValidBrushes = Session.initializeValidBrushes();
-        Metrics metrics = new Metrics(this, BSTATS_ID);
-
-        metrics.addCustomChart(new SimplePie(
-                "worldeditImplementation",
-                () -> Bukkit.getPluginManager().getPlugin("FastAsyncWorldEdit") != null ? "FastAsyncWorldEdit" : "WorldEdit"
-        ));
-        metrics.addCustomChart(new SimplePie("amountOfValidBrushes", () -> {
-            int amountOfValidBrushes = Session.initializeValidBrushes();
-            if (amountOfValidBrushes <= 0) {
-                return "0";
-            } else if (amountOfValidBrushes <= 10) {
-                return "1-10";
-            } else if (amountOfValidBrushes <= 30) {
-                return "11-30";
-            } else if (amountOfValidBrushes <= 50) {
-                return "31-50";
-            } else if (amountOfValidBrushes <= 100) {
-                return "51-100";
-            } else if (amountOfValidBrushes <= 150) {
-                return "101-150";
-            } else if (amountOfValidBrushes <= 200) {
-                return "151-200";
-            } else {
-                return "201+";
-            }
-        }));
 
         try {
             Class.forName("org.bukkit.generator.WorldInfo");

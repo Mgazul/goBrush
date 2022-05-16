@@ -23,7 +23,7 @@ configurations.all {
 }
 
 tasks.compileJava.configure {
-    options.release.set(8)
+    options.release.set(17)
 }
 
 repositories {
@@ -38,11 +38,8 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.18-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:1.5.25")
-    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.1.1")
-    implementation("net.lingala.zip4j:zip4j:2.10.0")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.1.2")
     implementation("dev.notmyfault.serverlib:ServerLib:2.3.1")
-    implementation("org.bstats:bstats-bukkit:3.0.0")
-    implementation("org.bstats:bstats-base:3.0.0")
     implementation("io.papermc:paperlib:1.0.7")
 }
 
@@ -77,15 +74,8 @@ tasks.named<Copy>("processResources") {
 tasks.named<ShadowJar>("shadowJar") {
     archiveClassifier.set(null as String?)
     dependencies {
-        relocate("net.lingala.zip4j", "com.arcaniax.zip4j") {
-            include(dependency("net.lingala.zip4j:zip4j"))
-        }
         relocate("org.incendo.serverlib", "com.arcaniax.gobrush.serverlib") {
             include(dependency("dev.notmyfault.serverlib:ServerLib:2.3.1"))
-        }
-        relocate("org.bstats", "com.arcaniax.gobrush.metrics") {
-            include(dependency("org.bstats:bstats-base"))
-            include(dependency("org.bstats:bstats-bukkit"))
         }
         relocate("io.papermc.lib", "com.arcaniax.gobrush.paperlib") {
             include(dependency("io.papermc:paperlib:1.0.7"))

@@ -60,7 +60,7 @@ public class Brush implements Comparable {
     public Brush() {
         amountOfValidBrushes = Session.initializeValidBrushes();
         if (amountOfValidBrushes == 0) {
-            this.name = "No brushes installed";
+            this.name = "没有安装刷子";
         } else {
             this.name = DEFAULT_NAME;
         }

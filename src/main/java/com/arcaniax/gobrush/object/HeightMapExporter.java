@@ -77,7 +77,7 @@ public class HeightMapExporter {
 
 
     public void exportImage(int size, String name) {
-        String prefix = "§bgoBrush> ";
+        String prefix = "§b自定义笔刷> ";
         int AdjustX = 0;
         int AdjustZ = 0;
         int blockSize = maxX - minX;
@@ -88,7 +88,7 @@ public class HeightMapExporter {
             AdjustZ = (blockSize - (maxZ - minZ)) / 2;
         }
         if (blockSize < 20) {
-            p.sendMessage(prefix + "§cPlease make a bigger selection");
+            p.sendMessage(prefix + "§c请做出更大的选择");
             return;
         }
         int highest = 0;
@@ -110,7 +110,7 @@ public class HeightMapExporter {
         }
         int height = highest - lowest;
         if (height < 10) {
-            p.sendMessage(prefix + "§cPlease select a bigger mountain");
+            p.sendMessage(prefix + "§c请选择更大的山");
             return;
         }
         BufferedImage img = new BufferedImage(blockSize, blockSize, BufferedImage.TYPE_INT_RGB);

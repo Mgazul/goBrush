@@ -56,8 +56,8 @@ public class InventoryClickListener implements Listener {
 
     private static final String PERMISSION_BYPASS_MAXSIZE = "gobrush.bypass.maxsize";
     private static final String PERMISSION_BYPASS_MAXINTENSITY = "gobrush.bypass.maxintensity";
-    private static final String MAIN_MENU_INVENTORY_TITLE = "goBrush Menu";
-    private static final String BRUSH_MENU_INVENTORY_TITLE = "goBrush Brushes";
+    private static final String MAIN_MENU_INVENTORY_TITLE = "自定义笔刷";
+    private static final String BRUSH_MENU_INVENTORY_TITLE = "自定义笔刷列表";
     private static int amountOfValidBrushes;
 
     @EventHandler(priority = EventPriority.NORMAL)
@@ -140,17 +140,7 @@ public class InventoryClickListener implements Listener {
                 if (amountOfValidBrushes == 0) {
                     player.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&',
-                            "&bgoBrush> &cWARNING! The automatic brush installation failed because the server cannot connect to GitHub."
-                    ));
-                    player.spigot().sendMessage(new ComponentBuilder("goBrush> ").color(ChatColor.AQUA)
-                            .append("Click here to download the default brushes manually.").color(ChatColor.GOLD)
-                            .event(new ClickEvent(
-                                    ClickEvent.Action.OPEN_URL,
-                                    "https://github.com/Arcaniax-Development/goBrush-Assets/blob/main/brushes.zip?raw=true"
-                            )).create());
-                    player.sendMessage(ChatColor.translateAlternateColorCodes(
-                            '&',
-                            "&bgoBrush> &cExtract the zip into &e/plugins/goBrush/brushes"
+                            "&b自定义笔刷> &c没有安装任何刷子<灰度图>"
                     ));
                 } else {
                     Session.initializeBrushMenu();

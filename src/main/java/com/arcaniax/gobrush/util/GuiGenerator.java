@@ -45,7 +45,7 @@ import java.util.List;
  */
 public class GuiGenerator {
 
-    private static final String MAIN_MENU_INVENTORY_TITLE = "&1goBrush Menu";
+    private static final String MAIN_MENU_INVENTORY_TITLE = "&1自定义笔刷";
     private static final ItemStack GRAY_GLASS_PANE = createItem(
             XMaterial.GRAY_STAINED_GLASS_PANE.parseMaterial(),
             (short) XMaterial.GRAY_STAINED_GLASS_PANE.data,
@@ -98,16 +98,16 @@ public class GuiGenerator {
                 11,
                 createItem(XMaterial.BROWN_MUSHROOM.parseMaterial(),
                         (short) 0,
-                        "&6Size: &e" + brushPlayer.getBrushSize(),
-                        "&63D Size: &e" + (double) brushPlayer.getBrushSize() / 4.0 + "___&3___&7Left click to increase&3___&7Right click to decrease___&7Shift click to change by 10"
+                        "&6大小: &e" + brushPlayer.getBrushSize(),
+                        "&63D大小: &e" + (double) brushPlayer.getBrushSize() / 4.0 + "___&3___&7左键增加&3___&7右键减少___&7Shift 单击以更改 10"
                 )
         );
         mainMenu.setItem(
                 12,
                 createItem(XMaterial.BLAZE_POWDER.parseMaterial(),
                         (short) 0,
-                        "&6Intensity: &e" + brushPlayer.getBrushIntensity(),
-                        "&3___&7Left click to increase&3___&7Right click to decrease"
+                        "&6强度: &e" + brushPlayer.getBrushIntensity(),
+                        "&3___&7左键增加&3___&7右键减少"
                 )
         );
         if (brushPlayer.getBrushSize() > brushPlayer.getMaxBrushSize()) {
@@ -129,8 +129,8 @@ public class GuiGenerator {
                     10,
                     createItem(XMaterial.WRITABLE_BOOK.parseMaterial(),
                             (short) 0,
-                            "&6Selected Brush: &e" + brushPlayer.getBrush().getName(),
-                            "&a&lEnabled___&7___&7Left click to change brush___&7Right click to toggle"
+                            "&6选择笔刷: &e" + brushPlayer.getBrush().getName(),
+                            "&a&l开启___&7___&7左键更改画笔___&7右键切换"
                     )
             );
             mainMenu.setItem(1, GREEN_GLASS_PANE);
@@ -140,28 +140,28 @@ public class GuiGenerator {
                     10,
                     createItem(XMaterial.WRITABLE_BOOK.parseMaterial(),
                             (short) 0,
-                            "&6Selected Brush: &e" + brushPlayer.getBrush().getName(),
-                            "&c&lDisabled___&7___&7Left click to change brush___&7Right click to toggle"
+                            "&6选择笔刷: &e" + brushPlayer.getBrush().getName(),
+                            "&c&l关闭___&7___&7左键更改画笔___&7右键切换"
                     )
             );
             mainMenu.setItem(1, RED_GLASS_PANE);
             mainMenu.setItem(19, RED_GLASS_PANE);
         }
         if (brushPlayer.isDirectionMode()) {
-            mainMenu.setItem(13, HeadURL.create(HeadURL.upB64, "&6Pull Mode", "&7Click to change"));
+            mainMenu.setItem(13, HeadURL.create(HeadURL.upB64, "&6Pull Mode", "&7点击更改"));
             mainMenu.setItem(4, ORANGE_GLASS_PANE);
             mainMenu.setItem(22, ORANGE_GLASS_PANE);
         } else {
-            mainMenu.setItem(13, HeadURL.create(HeadURL.downB64, "&6Push Mode", "&7Click to change"));
+            mainMenu.setItem(13, HeadURL.create(HeadURL.downB64, "&6Push Mode", "&7点击更改"));
             mainMenu.setItem(4, ORANGE_GLASS_PANE);
             mainMenu.setItem(22, ORANGE_GLASS_PANE);
         }
         if (brushPlayer.is3DMode()) {
-            mainMenu.setItem(14, HeadURL.create(HeadURL._3DB64, "&63D Mode", "&a&lEnabled___&7___&7Click to toggle"));
+            mainMenu.setItem(14, HeadURL.create(HeadURL._3DB64, "&63D Mode", "&a&l开启___&7___&7点击切换"));
             mainMenu.setItem(5, GREEN_GLASS_PANE);
             mainMenu.setItem(23, GREEN_GLASS_PANE);
         } else {
-            mainMenu.setItem(14, HeadURL.create(HeadURL._3DB64, "&63D Mode", "&c&lDisabled___&7___&7Click to toggle"));
+            mainMenu.setItem(14, HeadURL.create(HeadURL._3DB64, "&63D Mode", "&c&l关闭___&7___&7点击切换"));
             mainMenu.setItem(5, RED_GLASS_PANE);
             mainMenu.setItem(23, RED_GLASS_PANE);
         }
@@ -170,8 +170,8 @@ public class GuiGenerator {
                     15,
                     createItem(XMaterial.HEAVY_WEIGHTED_PRESSURE_PLATE.parseMaterial(),
                             (short) 0,
-                            "&6Flat Mode",
-                            "&a&lEnabled___&7___&7Click to toggle"
+                            "&6平坦模式",
+                            "&a&l开启___&7___&7点击切换"
                     )
             );
             mainMenu.setItem(6, GREEN_GLASS_PANE);
@@ -181,8 +181,8 @@ public class GuiGenerator {
                     15,
                     createItem(XMaterial.HEAVY_WEIGHTED_PRESSURE_PLATE.parseMaterial(),
                             (short) 0,
-                            "&6Flat Mode",
-                            "&c&lDisabled___&7___&7Click to toggle"
+                            "&6平坦模式",
+                            "&c&l关闭___&7___&7点击切换"
                     )
             );
             mainMenu.setItem(6, RED_GLASS_PANE);
@@ -194,8 +194,8 @@ public class GuiGenerator {
                     16,
                     createItem(XMaterial.COMPASS.parseMaterial(),
                             (short) 0,
-                            "&6Auto Rotation",
-                            "&a&lEnabled___&7___&7Click to toggle"
+                            "&6自动旋转",
+                            "&a&l开启___&7___&7点击切换"
                     )
             );
             mainMenu.setItem(7, GREEN_GLASS_PANE);
@@ -205,8 +205,8 @@ public class GuiGenerator {
                     16,
                     createItem(XMaterial.COMPASS.parseMaterial(),
                             (short) 0,
-                            "&6Auto Rotation",
-                            "&c&lDisabled___&7___&7Click to toggle"
+                            "&6自动旋转",
+                            "&c&l关闭___&7___&7点击切换"
                     )
             );
             mainMenu.setItem(7, RED_GLASS_PANE);

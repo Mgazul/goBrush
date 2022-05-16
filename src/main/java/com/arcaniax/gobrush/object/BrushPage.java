@@ -54,16 +54,16 @@ import java.util.stream.IntStream;
 public class BrushPage {
 
     /* Attributes */
-    private static final String BRUSH_MENU_INVENTORY_TITLE = "&1goBrush Brushes";
+    private static final String BRUSH_MENU_INVENTORY_TITLE = "&1自定义笔刷列表";
     private static final ItemStack GRAY_GLASS_PANE = createItem(
             XMaterial.GRAY_STAINED_GLASS_PANE.parseMaterial(),
             (short) XMaterial.GRAY_STAINED_GLASS_PANE.data,
             "&6",
             ""
     );
-    private static final ItemStack EXIT = createItem(XMaterial.BARRIER.parseMaterial(), (short) 0, "&cBack to main menu", "");
-    private static final ItemStack PREVIOUS_PAGE = createItem(XMaterial.ARROW.parseMaterial(), (short) 0, "&6Previous page", "");
-    private static final ItemStack NEXT_PAGE = createItem(XMaterial.ARROW.parseMaterial(), (short) 0, "&6Next page", "");
+    private static final ItemStack EXIT = createItem(XMaterial.BARRIER.parseMaterial(), (short) 0, "&c返回主菜单", "");
+    private static final ItemStack PREVIOUS_PAGE = createItem(XMaterial.ARROW.parseMaterial(), (short) 0, "&6上一页", "");
+    private static final ItemStack NEXT_PAGE = createItem(XMaterial.ARROW.parseMaterial(), (short) 0, "&6下一页", "");
     private final Inventory INVENTORY;
     private final int PAGE_NUMBER;
 
@@ -83,7 +83,7 @@ public class BrushPage {
         this.PAGE_NUMBER = pageNumber;
         this.INVENTORY = Bukkit.createInventory(null, 54, ChatColor.translateAlternateColorCodes(
                 '&',
-                BRUSH_MENU_INVENTORY_TITLE + "&8 | &5Page " + (pageNumber + 1)
+                BRUSH_MENU_INVENTORY_TITLE + "&8 | &5页 " + (pageNumber + 1)
         ));
 
         for (int i = 0; i < 54; i++) {

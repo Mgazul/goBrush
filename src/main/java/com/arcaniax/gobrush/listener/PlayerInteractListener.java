@@ -64,7 +64,7 @@ import java.util.Random;
  */
 public class PlayerInteractListener implements Listener {
 
-    private static final String PREFIX = "&bgoBrush> ";
+    private static final String PREFIX = "&b自定义笔刷> ";
     private static final String PERMISSION_BYPASS_WORLD = "gobrush.bypass.world";
     private static final String PERMISSION_USE = "gobrush.use";
 
@@ -90,7 +90,7 @@ public class PlayerInteractListener implements Listener {
             if (!(brushPlayer.isBrushEnabled())) {
                 player.sendMessage(ChatColor.translateAlternateColorCodes(
                         '&',
-                        PREFIX + "&cYour brush is disabled, left click to enable the brush or type &f/gb toggle&c."
+                        PREFIX + "&c您的画笔已禁用，左键单击以启用画笔或输入 &f/gb toggle&c."
                 ));
                 return;
             }

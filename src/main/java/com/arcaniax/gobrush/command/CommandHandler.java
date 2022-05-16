@@ -45,7 +45,7 @@ import java.util.logging.Level;
 
 public class CommandHandler implements CommandExecutor {
 
-    private static final String prefix = "&bgoBrush> ";
+    private static final String prefix = "&b自定义笔刷> ";
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -58,7 +58,7 @@ public class CommandHandler implements CommandExecutor {
             if (!p.hasPermission("gobrush.use")) {
                 p.sendMessage(ChatColor.translateAlternateColorCodes(
                         '&',
-                        prefix + "&cYou are lacking the permission gobrush.use"
+                        prefix + "&c你缺少权限 gobrush.use"
                 ));
                 return true;
             }
@@ -66,19 +66,19 @@ public class CommandHandler implements CommandExecutor {
                 if (p.hasPermission("gobrush.admin")) {
                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&',
-                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&creload&7|&cexport&7|&cinfo "
+                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&creload&7|&cexport "
                     ));
                     return true;
                 } else if (p.hasPermission("gobrush.export")) {
                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&',
-                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cexport&7|&cinfo "
+                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cexport "
                     ));
                     return true;
                 }
                 p.sendMessage(ChatColor.translateAlternateColorCodes(
                         '&',
-                        prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cinfo "
+                        prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle "
                 ));
                 return true;
             } else if (args.length == 1) {
@@ -115,46 +115,23 @@ public class CommandHandler implements CommandExecutor {
                     Session.initializeBrushPlayers();
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + "&aReload Successful"));
                     return true;
-                } else if (args[0].equalsIgnoreCase("info") || args[0].equalsIgnoreCase("i")) {
-
-                    p.spigot().sendMessage(new ComponentBuilder("goBrush> ").color(ChatColor.AQUA)
-                            .append("Created by: ").color(ChatColor.GOLD)
-                            .append("Arcaniax").color(ChatColor.YELLOW)
-                            .event(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://twitter.com/Arcaniax")).create());
-
-                    p.spigot().sendMessage(new ComponentBuilder("goBrush> ").color(ChatColor.AQUA)
-                            .append("Sponsored by: ").color(ChatColor.GOLD)
-                            .append("@goCreativeMC").color(ChatColor.YELLOW)
-                            .event(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://twitter.com/goCreativeMC")).create());
-
-                    p.sendMessage(ChatColor.translateAlternateColorCodes(
-                            '&',
-                            prefix + "&6Plugin download: &ehttps://www.spigotmc.org/resources/23118/"
-                    ));
-
-                    p.spigot().sendMessage(new ComponentBuilder("goBrush> ").color(ChatColor.AQUA)
-                            .append("More brushes: ").color(ChatColor.GOLD)
-                            .append("Click here").color(ChatColor.YELLOW)
-                            .event(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://gumroad.com/aerios#JAtxa")).create());
-
-                    return true;
                 }
                 if (p.hasPermission("gobrush.admin")) {
                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&',
-                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&creload&7|&cexport&7|&cinfo "
+                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&creload&7|&cexport "
                     ));
                     return true;
                 } else if (p.hasPermission("gobrush.export")) {
                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&',
-                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cexport&7|&cinfo "
+                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cexport "
                     ));
                     return true;
                 }
                 p.sendMessage(ChatColor.translateAlternateColorCodes(
                         '&',
-                        prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cinfo "
+                        prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle "
                 ));
                 return true;
             } else if (args.length == 2) {
@@ -256,19 +233,19 @@ public class CommandHandler implements CommandExecutor {
                 if (p.hasPermission("gobrush.admin")) {
                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&',
-                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&creload&7|&cexport&7|&cinfo "
+                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&creload&7|&cexport "
                     ));
                     return true;
                 } else if (p.hasPermission("gobrush.export")) {
                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&',
-                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cexport&7|&cinfo "
+                            prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cexport "
                     ));
                     return true;
                 }
                 p.sendMessage(ChatColor.translateAlternateColorCodes(
                         '&',
-                        prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle&7|&cinfo "
+                        prefix + "&c/gb size&7|&cintensity&7|&cbrush&7|&ctoggle "
                 ));
                 return true;
             }
