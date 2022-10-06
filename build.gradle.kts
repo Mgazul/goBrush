@@ -35,10 +35,9 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
-    compileOnly("net.md-5:bungeecord-api:1.18-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:1.5.25")
-    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.1.2")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.4.7")
     implementation("dev.notmyfault.serverlib:ServerLib:2.3.1")
     implementation("io.papermc:paperlib:1.0.7")
 }

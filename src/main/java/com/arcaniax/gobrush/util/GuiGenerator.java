@@ -148,11 +148,11 @@ public class GuiGenerator {
             mainMenu.setItem(19, RED_GLASS_PANE);
         }
         if (brushPlayer.isDirectionMode()) {
-            mainMenu.setItem(13, HeadURL.create(HeadURL.upB64, "&6Pull Mode", "&7点击更改"));
+            mainMenu.setItem(13, HeadURL.create(HeadURL.upB64, "&6上升模式", "&7点击更改"));
             mainMenu.setItem(4, ORANGE_GLASS_PANE);
             mainMenu.setItem(22, ORANGE_GLASS_PANE);
         } else {
-            mainMenu.setItem(13, HeadURL.create(HeadURL.downB64, "&6Push Mode", "&7点击更改"));
+            mainMenu.setItem(13, HeadURL.create(HeadURL.downB64, "&6下降模式", "&7点击更改"));
             mainMenu.setItem(4, ORANGE_GLASS_PANE);
             mainMenu.setItem(22, ORANGE_GLASS_PANE);
         }
