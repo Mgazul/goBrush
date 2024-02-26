@@ -1,14 +1,12 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import org.cadixdev.gradle.licenser.LicenseExtension
 import org.ajoberstar.grgit.Grgit
 
 plugins {
     java
    `java-library`
 
-    id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("org.cadixdev.licenser") version "0.6.1"
-    id("org.ajoberstar.grgit") version "5.0.0"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("org.ajoberstar.grgit") version "5.2.1"
 
     idea
     eclipse
@@ -35,11 +33,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:1.5.25")
-    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.4.7")
-    implementation("dev.notmyfault.serverlib:ServerLib:2.3.1")
-    implementation("io.papermc:paperlib:1.0.7")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.9.0")
+    implementation("dev.notmyfault.serverlib:ServerLib:2.3.4")
+    implementation("io.papermc:paperlib:1.0.8")
 }
 
 var buildNumber by extra("")
@@ -57,13 +55,6 @@ ext {
 
 version = String.format("%s-%s", rootProject.version, buildNumber)
 
-configure<LicenseExtension> {
-    header.set(resources.text.fromFile(file("HEADER.txt")))
-    include("**/*.java")
-    exclude("**/XMaterial.java")
-    newLine.set(false)
-}
-
 tasks.named<Copy>("processResources") {
     filesMatching("plugin.yml") {
         expand("version" to project.version)
@@ -74,10 +65,10 @@ tasks.named<ShadowJar>("shadowJar") {
     archiveClassifier.set(null as String?)
     dependencies {
         relocate("org.incendo.serverlib", "com.arcaniax.gobrush.serverlib") {
-            include(dependency("dev.notmyfault.serverlib:ServerLib:2.3.1"))
+            include(dependency("dev.notmyfault.serverlib:ServerLib:2.3.4"))
         }
         relocate("io.papermc.lib", "com.arcaniax.gobrush.paperlib") {
-            include(dependency("io.papermc:paperlib:1.0.7"))
+            include(dependency("io.papermc:paperlib:1.0.8"))
         }
     }
     minimize()
